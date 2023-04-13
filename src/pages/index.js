@@ -1,16 +1,22 @@
 import Layout from '@/components/layout/Layout';
 
 import { getAllPosts } from '../../lib';
+import Post from '@/components/post/Post';
 
 const HomePage = ({ posts }) => {
-  console.log(posts);
   return (
     <Layout>
-      <div className=''>
-        <h1>home page</h1>
-      </div>
-      <div>
-        <p>hello</p>
+      <div className='grid grid-cols-1 items-center justify-center '>
+        <div>
+          <h1 className='capitalize text-3xl text-center my-2 border-b-2'>
+            latest posts
+          </h1>
+        </div>
+        <div>
+          {posts.map((post) => {
+            return <Post key={post.slug} post={post} />;
+          })}
+        </div>
       </div>
     </Layout>
   );
