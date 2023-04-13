@@ -1,7 +1,9 @@
-import React from 'react';
 import Layout from '@/components/layout/Layout';
 
-const HomePage = () => {
+import { getAllPosts } from '../../lib';
+
+const HomePage = ({ posts }) => {
+  console.log(posts);
   return (
     <Layout>
       <div className=''>
@@ -15,3 +17,13 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+export async function getStaticProps() {
+  const posts = getAllPosts();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
