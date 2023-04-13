@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import CategoryLabels from '../blogs/CategoryLabels';
 
 const Post = ({ post }) => {
   const { slug, matterData } = post;
@@ -29,7 +30,7 @@ const Post = ({ post }) => {
         {/* labels start */}
         <div className='flex justify-around w-full my-2'>
           <p className='bg-stone-50 py-1 px-2 rounded-md'>{date}</p>
-          <p>{category}</p>
+          <CategoryLabels slug={slug}>{category}</CategoryLabels>
         </div>
         {/* labels end */}
 
