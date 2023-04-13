@@ -6,18 +6,18 @@ import Post from '@/components/post/Post';
 const HomePage = ({ posts }) => {
   return (
     <Layout>
-      <div className='grid grid-cols-1 items-center justify-center '>
+      <article className='grid  items-center justify-center '>
         <div>
           <h1 className='capitalize text-3xl text-center my-2 border-b-2'>
             latest posts
           </h1>
         </div>
-        <div>
+        <section className='grid w-full min-h-screen  grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4'>
           {posts.map((post) => {
             return <Post key={post.slug} post={post} />;
           })}
-        </div>
-      </div>
+        </section>
+      </article>
     </Layout>
   );
 };
