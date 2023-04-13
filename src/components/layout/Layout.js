@@ -6,9 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <main className='w-full mx-auto my-2 flex items-center  justify-center flex-col '>
-        {children}
-      </main>
+      <main className='w-full min-h-screen mx-auto p-1   '>{children}</main>
       <Footer />
     </>
   );

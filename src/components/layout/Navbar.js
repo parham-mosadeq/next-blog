@@ -13,27 +13,33 @@ const Navbar = () => {
   };
   return (
     <header
-      className={` w-full sm:h-10 ${
-        isOpen ? 'h-36  transform' : 'h-10'
-      } bg-blue-700 flex justify-between items-center text-white`}
+      className={` w-full h-10  sm:h-12  z-40 bg-blue-700 flex justify-around items-center text-white`}
     >
       {/* logo start */}
-      <div className='mx-1'>
+      <div className='mx-2 text-md w-full'>
         <Link href='/'>
-          <Image src='/logo.png' alt='logo' width={30} height={30} />
+          <Image src='/images/logo.png' alt='logo' width={30} height={30} />
         </Link>
       </div>
       {/* logo end */}
-      <nav className='flex flex-col'>
-        <span
-          className={` fixed top-3 right-3  sm:hidden cursor-pointer text-lg`}
-        >
-          <HiMenu onClick={handleMenu} />
-        </span>
-        <ul className={`${isOpen ? 'block sm:flex ' : 'hidden'}  `}>
+      <span
+        className={` fixed top-3 right-3  z-50 sm:hidden cursor-pointer text-lg`}
+      >
+        <HiMenu onClick={handleMenu} />
+      </span>
+
+      <nav
+        className={`absolute top-0 right-0 h-screen w-1/2 sm:w-fit sm:h-10 sm:relative  bg-blue-600 sm:bg-inherit  sm:flex z-0 ${
+          isOpen ? 'block  ' : 'hidden'
+        }  `}
+      >
+        <ul className='sm:flex  text-center my-10 sm:my-0 border-t-2 sm:border-t-0 sm:mx-2 sm:px-2'>
           {navItems.map((item) => (
-            <li className='cursor-pointer mx-2 capitalize' key={item}>
-              {item}
+            <li
+              className={`cursor-pointer mx-2 capitalize py-3 sm:p-0 hover:text-slate-200 z-50 `}
+              key={item}
+            >
+              <Link href={`/${item}`}>{item}</Link>
             </li>
           ))}
         </ul>
@@ -43,3 +49,16 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+{
+  /* <nav className='flex flex-col'>
+ 
+  <ul className={`${isOpen ? 'block sm:flex ' : 'hidden'} sm:flex  `}>
+    {navItems.map((item) => (
+      <li className='cursor-pointer mx-2 capitalize' key={item}>
+        <Link href={`/${item}`}>{item}</Link>
+      </li>
+    ))}
+  </ul>
+</nav>; */
+}
