@@ -37,7 +37,7 @@ const Post = ({ post }) => {
 
         {/* card details start */}
         <div className='my-2 '>
-          <p className='text-left font-bold pl-2 text-lg text-black w-fit border-b-2 border-stone-500'>
+          <p className='text-left font-bold pl-2 text-lg text-blue-700 hover:text-blue-500 w-fit border-b-2 border-stone-500'>
             <Link href={`/blogs/${slug}`}>{title}</Link>
           </p>
           <p className='text-justify p-3 tracking-tight m-0'>{excerpt}</p>
