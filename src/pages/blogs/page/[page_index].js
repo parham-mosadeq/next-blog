@@ -1,6 +1,7 @@
 import Layout from '@/components/layout/Layout';
-import { getAllPosts, getFiles, sortByDate } from '../../../../lib';
+import PaginateHandler from '@/components/blogs/PaginateHandler';
 import Post from '@/components/post/Post';
+import { getAllPosts, getFiles, sortByDate } from '../../../../lib';
 import { POST_PER_PAGE } from '../../../../config';
 const BlogPage = ({ posts, numPages, currentPage }) => {
   return (
@@ -16,6 +17,7 @@ const BlogPage = ({ posts, numPages, currentPage }) => {
             return <Post key={post.slug} post={post} />;
           })}
         </section>
+        <PaginateHandler numPages={numPages} currentPage={currentPage} />
       </article>
     </Layout>
   );
@@ -37,8 +39,6 @@ export async function getStaticPaths() {
       params: { page_index: i.toString() },
     });
   }
-
-  console.log(paths);
 
   return {
     paths,
