@@ -14,7 +14,7 @@ const CategoryLabels = ({ children }) => {
       className={`bg-${keys[children]}-500 px-2 py-1 text-gray-50 rounded-md`}
       // className={`bg-blue-500 px-2 py-1 text-gray-50 rounded-md`}
     >
-      <Link href={`/blog/category/${children.toLowerCase()}`}>{children}</Link>
+      <Link href={`/blogs/category/${children.toLowerCase()}`}>{children}</Link>
     </div>
   );
 };
