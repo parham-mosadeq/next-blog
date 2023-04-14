@@ -50,15 +50,4 @@ const Navbar = () => {
 
 export default Navbar;
 
-{
-  /* <nav className='flex flex-col'>
  
-  <ul className={`${isOpen ? 'block sm:flex ' : 'hidden'} sm:flex  `}>
-    {navItems.map((item) => (
-      <li className='cursor-pointer mx-2 capitalize' key={item}>
-        <Link href={`/${item}`}>{item}</Link>
-      </li>
-    ))}
-  </ul>
-</nav>; */
-}
