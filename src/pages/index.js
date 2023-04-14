@@ -1,6 +1,6 @@
 import Layout from '@/components/layout/Layout';
 
-import { getAllPosts } from '../../lib';
+import { getAllPosts, sortByDate } from '../../lib';
 import Post from '@/components/post/Post';
 
 const HomePage = ({ posts }) => {
@@ -29,7 +29,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      posts: posts.sort(sortByDate),
     },
   };
 }
