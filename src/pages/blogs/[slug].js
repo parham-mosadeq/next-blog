@@ -2,6 +2,7 @@ import Layout from '@/components/layout/Layout';
 import { getPostBySlug } from '../../../lib';
 import PostDetails from '@/components/post/PostDetails';
 import Image from 'next/image';
+import BackBtn from '@/components/layout/BackBtn';
 
 const PostPage = ({ matterData, markDownData }) => {
   const { author, title, date, cover_image, category, author_image } =
@@ -9,6 +10,7 @@ const PostPage = ({ matterData, markDownData }) => {
   return (
     <Layout>
       <main className='w-full'>
+        <BackBtn />
         <header>
           <article className='w-full h-full relative  block mx-auto'>
             <Image
