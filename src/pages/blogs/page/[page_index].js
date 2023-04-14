@@ -1,8 +1,8 @@
 import Layout from '@/components/layout/Layout';
-import { getAllPosts, sortByDate } from '../../../../lib';
+import { getAllPosts, getFiles, sortByDate } from '../../../../lib';
 import Post from '@/components/post/Post';
-
-const BlogPage = ({ posts }) => {
+import { POST_PER_PAGE } from '../../../../config';
+const BlogPage = ({ posts, numPages, currentPage }) => {
   return (
     <Layout>
       <article className='grid  items-center justify-center '>
@@ -23,12 +23,47 @@ const BlogPage = ({ posts }) => {
 
 export default BlogPage;
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  // getting all files in an array
+  const files = getFiles();
+
+  // dynamic generation number of pages
+  const numPages = Math.ceil(files.length / POST_PER_PAGE);
+
+  const paths = [];
+
+  for (let i = 0; i <= numPages; i++) {
+    paths.push({
+      params: { page_index: i.toString() },
+    });
+  }
+
+  console.log(paths);
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const page = parseInt((params && params.page_index) || 1);
+
   const posts = getAllPosts();
+  const files = getFiles();
+
+  const numPages = Math.ceil(files.length / POST_PER_PAGE);
+  const pageIndex = page - 1;
+
+  const orderedPosts = posts
+    .sort(sortByDate)
+    .slice(pageIndex * POST_PER_PAGE, (pageIndex + 1) * POST_PER_PAGE);
 
   return {
     props: {
-      posts: posts.sort(sortByDate),
+      posts: orderedPosts,
+      numPages,
+      currentPage: page,
     },
   };
 }
