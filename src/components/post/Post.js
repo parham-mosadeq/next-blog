@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import CategoryLabels from '../blogs/CategoryLabels';
+import Link from 'next/link';
 
 const Post = ({ post }) => {
   const { slug, matterData } = post;
@@ -37,7 +38,7 @@ const Post = ({ post }) => {
         {/* card details start */}
         <div className='my-2 '>
           <p className='text-left font-bold pl-2 text-lg text-black w-fit border-b-2 border-stone-500'>
-            {title}
+            <Link href={`/blogs/${slug}`}>{title}</Link>
           </p>
           <p className='text-justify p-3 tracking-tight m-0'>{excerpt}</p>
         </div>
