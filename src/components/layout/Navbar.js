@@ -29,7 +29,7 @@ const Navbar = () => {
       </span>
 
       <nav
-        className={`absolute top-0 right-0 h-screen sm:justify-center w-1/2 sm:w-fit sm:h-10 sm:relative  bg-blue-600 sm:bg-inherit  sm:flex z-0 ${
+        className={`absolute top-0 right-0 h-screen text-center sm:justify-center w-1/2 sm:w-fit sm:h-10 sm:relative  bg-blue-600 sm:bg-inherit  sm:flex z-0 ${
           isOpen ? 'block  ' : 'hidden'
         }  `}
       >
