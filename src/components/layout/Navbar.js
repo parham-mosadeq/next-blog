@@ -16,7 +16,7 @@ const Navbar = () => {
       className={` w-full h-10  sm:h-12  z-40 bg-blue-700 flex items-center justify-around  text-white`}
     >
       {/* logo start */}
-      <div className='mx-2 text-md w-full'>
+      <div className='  text-md z-40 w-3/4 '>
         <Link href='/'>
           <Image src='/images/logo.png' alt='logo' width={30} height={30} />
         </Link>
