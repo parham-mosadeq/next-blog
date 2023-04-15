@@ -3,8 +3,10 @@ import { getPostBySlug } from '../../../lib';
 import PostDetails from '@/components/post/PostDetails';
 import Image from 'next/image';
 import BackBtn from '@/components/layout/BackBtn';
+import CategoryLabels from '@/components/blogs/CategoryLabels';
+import matter from 'gray-matter';
 
-const PostPage = ({ matterData, markDownData }) => {
+const PostPage = ({ matterData, content }) => {
   const { author, title, date, cover_image, category, author_image } =
     matterData;
   return (
@@ -33,11 +35,12 @@ const PostPage = ({ matterData, markDownData }) => {
             <div className='flex h-7 w-3/4 mx-auto justify-between items-center tracking-wider sm:h-10'>
               <p>{author}</p>
               <p>{date}</p>
+              <CategoryLabels>{category}</CategoryLabels>
             </div>
           </section>
         </header>
         <article>
-          <PostDetails markDownData={markDownData} />
+          <PostDetails content={content} />
         </article>
       </main>
     </Layout>
@@ -49,10 +52,12 @@ export default PostPage;
 export async function getServerSideProps({ params: { slug } }) {
   const { matterData, markDownData } = getPostBySlug(slug);
 
+  const { content } = matter(markDownData);
   return {
     props: {
       matterData,
       markDownData,
+      content,
     },
   };
 }
