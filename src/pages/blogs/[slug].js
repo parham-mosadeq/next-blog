@@ -14,7 +14,7 @@ const PostPage = ({ matterData, content }) => {
       <main className='w-full'>
         <BackBtn />
         <header>
-          <article className='w-full h-full relative  block mx-auto'>
+          <article className='w-full h-full relative  block mx-auto shadow-lg'>
             <Image
               className='w-full h-full sm:h-72 object-cover '
               src={cover_image}
