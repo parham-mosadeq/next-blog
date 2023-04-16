@@ -3,10 +3,12 @@ import PaginateHandler from '@/components/blogs/PaginateHandler';
 import Post from '@/components/post/Post';
 import { getAllPosts, getFiles, sortByDate } from '../../../../lib';
 import { POST_PER_PAGE } from '../../../../config';
+import HeadInfo from '@/components/layout/HeadInfo';
 
 const BlogPage = ({ posts, numPages, currentPage }) => {
   return (
     <Layout>
+      <HeadInfo title={`Blogs - ${currentPage}`} />
       <article className='flex items-center justify-center '>
         <article className='w-full'>
           <h1 className='capitalize text-3xl text-center my-2 border-b-2'>

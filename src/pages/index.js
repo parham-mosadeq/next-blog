@@ -2,10 +2,12 @@ import Layout from '@/components/layout/Layout';
 
 import { getAllPosts, sortByDate } from '../../lib';
 import Post from '@/components/post/Post';
+import HeadInfo from '@/components/layout/HeadInfo';
 
 const HomePage = ({ posts }) => {
   return (
     <Layout>
+      <HeadInfo title='Home' desc='showing top 6 blogs sorted by date' />
       <article className='grid  items-center justify-center '>
         <div>
           <h1 className='capitalize text-3xl text-center my-2 border-b-2'>

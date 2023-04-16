@@ -40,7 +40,7 @@ const PostPage = ({ matterData, content }) => {
           </section>
         </header>
         <article>
-          <PostDetails content={content} />
+          <PostDetails content={content} title={title} />
         </article>
       </main>
     </Layout>

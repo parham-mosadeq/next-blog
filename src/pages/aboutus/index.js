@@ -1,9 +1,14 @@
+import HeadInfo from '@/components/layout/HeadInfo';
 import Layout from '@/components/layout/Layout';
 import Image from 'next/image';
 import { FaGithub, FaEnvelope } from 'react-icons/fa';
 const AboutUs = () => {
   return (
     <Layout>
+      <HeadInfo
+        title='About us'
+        desc='all you need to know about me, parham mosadeqzadeh a front-end developer'
+      />
       <section className='text-center w-full '>
         <div className='w-1/2 mx-auto'>
           <div className='block mx-auto w-fit mt-7 shadow-lg '>
