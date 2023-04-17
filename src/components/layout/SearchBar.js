@@ -23,7 +23,7 @@ const SearchBar = () => {
     return () => {};
   }, [searchTerm]);
   return (
-    <div className='bg-stone-300  w-full max-h-10 h-10 flex items-center justify-end'>
+    <div className='z-0 bg-stone-300   max-h-10 h-10 flex items-center  justify-end'>
       <div>
         <form className='relative' onSubmit={(e) => e.preventDefault()}>
           <Image
@@ -34,7 +34,7 @@ const SearchBar = () => {
             height={10}
           />
           <input
-            className='capitalize rounded-md  px-5 py-1 mx-3 focus:bg-stone-100 focus:outline-none'
+            className='capitalize rounded-md px-5 py-1 mx-3 focus:bg-stone-100 focus:outline-none'
             type='text'
             placeholder='search...'
             value={searchTerm}

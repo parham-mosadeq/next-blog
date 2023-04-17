@@ -13,7 +13,7 @@ const Navbar = () => {
   };
   return (
     <header
-      className={` w-full h-10  sm:h-12  z-40 bg-blue-700 flex items-center justify-around  text-white`}
+      className={` w-full h-10 sm:h-12  z-40 bg-blue-700 flex items-center justify-around  text-white`}
     >
       {/* logo start */}
       <div className='  text-md z-40 w-3/4 '>
@@ -29,7 +29,7 @@ const Navbar = () => {
       </span>
 
       <nav
-        className={`absolute top-0 right-0 h-screen text-center sm:justify-center w-1/2 sm:w-fit sm:h-10 sm:relative  bg-blue-600 sm:bg-inherit  sm:flex z-0 ${
+        className={`z-40 absolute top-0 right-0 h-screen text-center sm:justify-center w-1/2 sm:w-fit sm:h-10 sm:relative  bg-blue-600 sm:bg-inherit  sm:flex   ${
           isOpen ? 'block  ' : 'hidden'
         }  `}
       >
