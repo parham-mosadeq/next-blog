@@ -29,8 +29,8 @@ const Post = ({ post }) => {
 
       <article className='bg-gray-200'>
         {/* labels start */}
-        <div className='flex justify-around w-full my-2'>
-          <p className='bg-stone-50 py-1 px-2 rounded-md'>{date}</p>
+        <div className='flex justify-around items-center w-full my-2'>
+          <p className='bg-stone-50 py-1 px-2 rounded-md mx-2'>{date}</p>
           <CategoryLabels slug={slug}>{category}</CategoryLabels>
         </div>
         {/* labels end */}
