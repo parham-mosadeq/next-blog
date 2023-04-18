@@ -71,5 +71,6 @@ export async function getStaticProps({ params }) {
       numPages,
       currentPage: page,
     },
+    revalidate: 5000,
   };
 }
