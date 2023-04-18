@@ -36,7 +36,7 @@ const PostPage = ({ matterData, content }) => {
             <div className='flex h-7 w-3/4 mx-auto justify-between items-center tracking-wider sm:h-10'>
               <Link
                 className='text-blue-700 hover:text-blue-800'
-                href={`/blogs/authors/${author}`}
+                href={`/authors/${author}`}
               >
                 {author}
               </Link>

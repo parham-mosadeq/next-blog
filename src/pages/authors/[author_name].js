@@ -1,5 +1,5 @@
 import Layout from '@/components/layout/Layout';
-import { getAuthorsPost } from '../../../../lib';
+import { getAuthorsPost } from '../../../lib';
 import Post from '@/components/post/Post';
 import BackBtn from '@/components/layout/BackBtn';
 
