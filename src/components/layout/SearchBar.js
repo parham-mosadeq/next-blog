@@ -5,23 +5,23 @@ const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState([]);
 
-  useEffect(() => {
-    const getResults = async () => {
-      if (searchTerm === '') {
-        setSearchResult([]);
-      } else {
-        const res = await fetch(`/api/search?q=${searchTerm}`);
+  // useEffect(() => {
+  //   const getResults = async () => {
+  //     if (searchTerm === '') {
+  //       setSearchResult([]);
+  //     } else {
+  //       const res = await fetch(`/api/search?q=${searchTerm}`);
 
-        const { result } = await res.json();
-        console.log(result);
-        setSearchResult(result);
-      }
-    };
+  //       const { result } = await res.json();
+  //       console.log(result);
+  //       setSearchResult(result);
+  //     }
+  //   };
 
-    getResults();
+  //   getResults();
 
-    return () => {};
-  }, [searchTerm]);
+  //   return () => {};
+  // }, [searchTerm]);
   return (
     <div className='z-0 bg-stone-300   max-h-10 h-10 flex items-center  justify-end'>
       <div>
