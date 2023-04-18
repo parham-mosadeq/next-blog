@@ -5,6 +5,7 @@ import Image from 'next/image';
 import BackBtn from '@/components/layout/BackBtn';
 import CategoryLabels from '@/components/blogs/CategoryLabels';
 import matter from 'gray-matter';
+import Link from 'next/link';
 
 const PostPage = ({ matterData, content }) => {
   const { author, title, date, cover_image, category, author_image } =
@@ -33,7 +34,12 @@ const PostPage = ({ matterData, content }) => {
           {/* info's */}
           <section className='bg-stone-100 rounded-b-sm '>
             <div className='flex h-7 w-3/4 mx-auto justify-between items-center tracking-wider sm:h-10'>
-              <p>{author}</p>
+              <Link
+                className='text-blue-700 hover:text-blue-800'
+                href={`/blogs/authors/${author}`}
+              >
+                {author}
+              </Link>
               <p>{date}</p>
               <CategoryLabels>{category}</CategoryLabels>
             </div>

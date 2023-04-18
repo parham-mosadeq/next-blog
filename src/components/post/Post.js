@@ -46,7 +46,12 @@ const Post = ({ post }) => {
 
         {/* author info start */}
         <div className='flex justify-between items-center p-2 w-full '>
-          <p className='text-md font-medium'>{author}</p>
+          <Link
+            href={`/blogs/authors/${author}`}
+            className='text-md font-medium text-blue-700 hover:text-blue-800'
+          >
+            {author}
+          </Link>
           <img className='rounded-full w-10 h-10' src={author_image} />
         </div>
         {/* author info end */}
