@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { HiMenu } from 'react-icons/hi';
 
-const navItems = ['home', 'blogs', 'authors', 'aboutUs'];
+const navItems = ['home', 'blogs', 'aboutUs'];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
