@@ -3,7 +3,7 @@ import React from 'react';
 import CategoryLabels from '../blogs/CategoryLabels';
 import Link from 'next/link';
 
-const Post = ({ post }) => {
+const SearchResult = ({ post }) => {
   const { slug, matterData } = post;
 
   const { author, title, excerpt, date, cover_image, category, author_image } =
@@ -12,11 +12,11 @@ const Post = ({ post }) => {
   return (
     <main
       className='flex flex-col items-center justify-center
-     my-4  w-3/5 mx-auto text-center rounded-md
+     my-4  w-full mx-auto text-center rounded-md
      '
     >
       {/* header start */}
-      <div>
+      <div className='md:w-1/2'>
         <Image
           className=' p-0 m-0 w-full rounded-t-xl'
           src={cover_image}
@@ -27,7 +27,7 @@ const Post = ({ post }) => {
       </div>
       {/* header end */}
 
-      <article className='bg-gray-200 w-full'>
+      <article className='bg-gray-200 w-full md:w-1/2'>
         {/* labels start */}
         <div className='flex justify-around items-center w-full my-2'>
           <p className='bg-stone-50 py-1 px-2 rounded-md mx-2'>{date}</p>
@@ -40,7 +40,6 @@ const Post = ({ post }) => {
           <p className='text-left font-bold pl-2 text-lg text-blue-700 hover:text-blue-500 w-fit border-b-2 border-stone-500'>
             <Link href={`/blogs/${slug}`}>{title}</Link>
           </p>
-          <p className='text-justify p-3 tracking-tight m-0'>{excerpt}</p>
         </div>
         {/* card details end */}
 
@@ -60,4 +59,4 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
+export default SearchResult;

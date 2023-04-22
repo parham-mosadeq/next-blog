@@ -1,29 +1,26 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import SearchResults from './SearchResults';
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState([]);
 
-  // useEffect(() => {
-  //   const getResults = async () => {
-  //     if (searchTerm === '') {
-  //       setSearchResult([]);
-  //     } else {
-  //       const res = await fetch(`/api/search?q=${searchTerm}`);
+  useEffect(() => {
+    const getResults = async () => {
+      if (searchTerm === '' || searchTerm.trim() === '') {
+        setSearchResult([]);
+      } else {
+        const res = await fetch(`/api/search?q=${searchTerm}`);
+        const result = await res.json();
+        setSearchResult(result);
+      }
+    };
+    getResults();
+  }, [searchTerm]);
 
-  //       const { result } = await res.json();
-  //       console.log(result);
-  //       setSearchResult(result);
-  //     }
-  //   };
-
-  //   getResults();
-
-  //   return () => {};
-  // }, [searchTerm]);
   return (
-    <div className='z-0 bg-stone-300   max-h-10 h-10 flex items-center  justify-end'>
+    <div className='z-0 bg-stone-300 relative  max-h-10 h-10 flex items-center  justify-end'>
       <div>
         <form className='relative' onSubmit={(e) => e.preventDefault()}>
           <Image
@@ -46,6 +43,7 @@ const SearchBar = () => {
           />
         </form>
       </div>
+      <SearchResults results={searchResult} />
     </div>
   );
 };
