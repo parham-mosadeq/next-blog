@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cache-posts": "node scripts/cache.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
@@ -19,5 +21,8 @@
     "react-icons": "^4.8.0",
     "react-syntax-highlighter": "^15.5.0",
     "tailwindcss": "3.3.1"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
   }
 }
